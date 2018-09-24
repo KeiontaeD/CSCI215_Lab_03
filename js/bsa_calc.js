@@ -5,10 +5,11 @@ function calculate() {
 
     var weight = document.getElementsByName("weight")[0].value;
     var height = document.getElementsByName("height")[0].value;
-
+    console.log('iamhere');
     console.log( 'Male = ' + male );
     console.log( 'Weight = ' + weight );
     console.log( 'Height = ' + height );
+
 
     // -------------------------------
     // Conversions
@@ -16,6 +17,11 @@ function calculate() {
     // lbs to kg: 1 lb = 0.454 kg
     // inch to meter: 1 in = 0.0254 m
     // inch to cm: 1 in = 2.54 cm
+    var kg = weight*0.454;
+    var cm= height*2.54;
+    var m = height*0.0254;
+    console.log("heightkg; "+kg)
+
 
     // ==========================================
     // Todo: Perform conversion calculations here
@@ -24,7 +30,8 @@ function calculate() {
     // Body Surface Area (BSA)
     // -------------------------------
 
-    var BSA = 0;
+    var BSA =  Math.sqrt(kg*cm/3600);
+    console.log("bsa; "+ BSA)
 
     // ==========================================
     // Todo: Perform BSA calculation here
@@ -33,7 +40,7 @@ function calculate() {
     // Ideal Body Weight (IBW)
     // -------------------------------
 
-    var IBW = 0;
+    var IBW = 45.5 + 2.3 * (height-60);
 
     if ( female ) {
 
@@ -41,10 +48,12 @@ function calculate() {
         // Todo: Perform female IBW calculation here
 
 
+
     } else if ( male ) {
 
         // ==========================================
         // Todo: Perform male IBW calculation here
+        IBM = 50 + 2.3 * (height-60);
 
     }
 
@@ -56,7 +65,7 @@ function calculate() {
 
     // ==========================================
     // Todo: Perform BMI calculation here
-
+    BMI = (weight * 0.454 )/ Math.pow(0.0254);
 
 
     // Do not modify this function call
